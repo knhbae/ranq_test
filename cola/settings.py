@@ -25,7 +25,7 @@ SECRET_KEY = '07b1u5ds-&u^3rpf_3+6c26-@%$5v8w8h@gascz^y*(57p=3f8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1',]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','.pythonanywhere.com']
 # ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 # Application definition
@@ -103,7 +103,6 @@ DATABASES = {
         'USER': 'bigsmart',
         'PASSWORD': '@big8570985',
         'HOST': 'bigsmart.mysql.pythonanywhere-services.com'
-        }
     }
 }
 
