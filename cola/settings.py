@@ -81,16 +81,28 @@ WSGI_APPLICATION = 'cola.wsgi.application'
 #     }
 # }
 
+##local test용
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'cola',
+#         'USER': 'root',
+#         'PASSWORD': 'b123412',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#         'OPTIONS': {
+#             'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"'
+#         }
+#     }
+
+##pythonanywhere 용
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cola',
-        'USER': 'root',
-        'PASSWORD': 'b123412',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"'
+        'NAME': 'bigsmart$ranq',
+        'USER': 'bigsmart',
+        'PASSWORD': '@big8570985',
+        'HOST': 'bigsmart.mysql.pythonanywhere-services.com'
         }
     }
 }
