@@ -1,0 +1,16 @@
+{% extends 'ranq/base.html' %}
+
+{% block content %}
+  <div class="post">
+    <h1>{{ q.title }}</h1>
+    <p>{{ q.desc|linebreaksbr }}</p>
+    <img src='/media/{{ q.image }}'>
+    <h1>나의 연봉은 대한민국 상위</h1>
+    {% if a.output == 90 %}
+    <h1>{{ a.output }} % 이하입니다!! 힘내세요..ㅠㅠ</h1>
+    {% else %}
+    <h1>{{ a.output }} % 이상입니다!!</h1>
+    {% endif %}
+  </div>
+{% endblock %}
+<hr>

@@ -1,0 +1,139 @@
+body{background-color: white; color:black; font-family: 'Do Hyeon', sans-serif; font-size: 23px; padding:0; margin: 0;}
+header{width:100%; position: relative; top:0;}
+.headerText{position: relative; text-align: center; height: 70px; margin: auto; color: white; line-height: 70px;}
+.header1{width: 100%; height: 70px;  top: 0; background-color: #000000; padding:0; margin:0; vertical-align: middle;}
+.nav{display: inline; width:100%;}
+section{font-family: 'Noto Sans KR', sans-serif; font-size: 16px;}
+.button{ font-family: 'Do Hyeon', sans-serif; font-size: 15px; width:32%; height: 50px; border:none; padding:0; margin:0; background-color: white;}
+.notselected{color: #000000; border-bottom: 5px solid black;}
+.selected{color: #FF0000; border-bottom: 5px solid red;}
+.section0, .section1, .section2{padding:0; text-align: left; position: static;}
+.buyBtn{padding:20px; font-family: 'Do Hyeon', sans-serif; font-size: 15px;width:33%; height: 50px; border:none;  margin:0; background-color: white; border: 1px black solid;}
+.info{width: 60%;}
+.thumbnail{width: 30%;}
+.visible{width: 100%;}
+.invisible{display:none;}
+input{width:70%; height: 30px; margin: 3px; border: 1px solid black; border-radius: 0;}
+.input_bank{width: 30%;}
+.input_account{width: 50%;}
+input[type="submit"]{width:30%; height: 35px; margin: 3px; border: 1px solid black; align:center; background-color: #FFFFFF; border-radius: 0;}
+#nick, #name, #phone, .label, #bank {margin-left: 15px; border-radius: 0;}
+a{text-decoration: none;}
+.text{font-family: 'Noto Sans KR', sans-serif; font-size: 13px;}
+.text2{font-family: 'Do Hyeon', sans-serif;}
+.text2{font-family: 'Noto Sans KR', sans-serif; margin:0;}
+table{border:1px solid black; width:90%; font-size: 11px;}
+input[type="checkbox"]{width: 15px; height: 15px; border-radius: 0; margin : 5px; vertical-align: middle;}
+hr{color: black; opacity: 50%}
+img{margin:0; padding:0;}
+.img{line-height: 0;}
+.success{height: 100px; border:none; font-family: 'Do Hyeon', sans-serif; font-size: 20px; padding-bottom: 0;}
+.overlay {position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.4); transition: opacity 400ms; visibility: hidden; opacity: 0;}
+.overlay:target { visibility: visible; opacity: 1;}
+.popup {height: 20%; margin: auto; padding: 10px; background: #464646; border-radius: 0px; width: 70%; position: absolute; left:0; right:0; top:0; bottom:0; transition: opacity 0.5s ease-in-out; color: #fff;}
+.header2 {width: 100%; height: 70px;  top: 0; background-color: #464646; padding:0; margin:0; vertical-align: middle; font-family: 'Noto Sans KR', sans-serif;}
+.popup .close {line-height: 30px; width:30px; position: absolute; top: 15px; right: 10px; transition: opacity 0.5s; font-size: 40px; text-decoration: none; color: #fff; padding:0px; margin:0px;}
+.reserv_container {font-family: 'Noto Sans KR', sans-serif; align: center; text-align: center;}
+.text_reservation {text-align: center; font-size: 15px;}
+.info_reservation {text-align: center; font-size: 12px; opacity: 0.5;}
+.table_rerservation {width: 85%; align: center; margin: 10px; border: none; table-layout: fixed; border-collapse: collapse; text-align:center;}
+.table_thead {width: 25%; background-color: #464646; color: #FFFFFF; font-family: 'Noto Sans KR', sans-serif; border: 1px solid #464646; padding: 10px;}
+.table_td { text-align: center; width: 12%; border-top: 1px solid #464646; border-bottom: 1px solid #464646; border-right: 1px dotted rgba(70, 70, 70, 0.5); font-family: 'Noto Sans KR', sans-serif; margin: 0;}
+.table_thead_text2 {font-size: 23px; line-height: 23px; font-weight: bold; margin-bottom: 0px;}
+.table_thead_text1 {font-size: 8px; line-height: 8px; margin: 0px;}
+.img_poster { margin-bottom: 2px;}
+.info_reservation {margin: 0px;}
+.form_popup {height: 80px; margin: auto; position: absolute; left:0; right:0; top:0; bottom:0; }
+body{background-color: white; color:black; font-family: 'Do Hyeon', sans-serif; font-size: 23px; padding:0; margin: 0;}
+header{width:100%; position: relative; top:0;}
+.headerText{position: relative; text-align: center; height: 70px; margin: auto; color: white; line-height: 70px;}
+.header1{width: 100%; height: 70px;  top: 0; background-color: #000000; padding:0; margin:0; vertical-align: middle;}
+.nav{display: inline; width:100%;}
+section{font-family: 'Noto Sans KR', sans-serif; font-size: 16px;}
+.button{ font-family: 'Do Hyeon', sans-serif; font-size: 15px; width:32%; height: 50px; border:none; padding:0; margin:0; background-color: white;}
+.notselected{color: #000000; border-bottom: 5px solid black;}
+.selected{color: #FF0000; border-bottom: 5px solid red;}
+.section0, .section1, .section2{padding:0; text-align: left; position: static;}
+.buyBtn{padding:20px; font-family: 'Do Hyeon', sans-serif; font-size: 15px;width:33%; height: 50px; border:none;  margin:0; background-color: white; border: 1px black solid;}
+.info{width: 60%;}
+.thumbnail{width: 30%;}
+.visible{width: 100%;}
+.invisible{display:none;}
+input{width:70%; height: 30px; margin: 3px; border: 1px solid black; border-radius: 0;}
+.input_bank{width: 30%;}
+.input_account{width: 50%;}
+input[type="submit"]{width:30%; height: 35px; margin: 3px; border: 1px solid black; align:center; background-color: #FFFFFF; border-radius: 0;}
+#nick, #name, #phone, .label, #bank {margin-left: 15px; border-radius: 0;}
+a{text-decoration: none;}
+.text{font-family: 'Noto Sans KR', sans-serif; font-size: 13px;}
+.text2{font-family: 'Do Hyeon', sans-serif;}
+.text2{font-family: 'Noto Sans KR', sans-serif; margin:0;}
+table{border:1px solid black; width:90%; font-size: 11px;}
+input[type="checkbox"]{width: 15px; height: 15px; border-radius: 0; margin : 5px; vertical-align: middle;}
+hr{color: black; opacity: 50%}
+img{margin:0; padding:0;}
+.img{line-height: 0;}
+.success{height: 100px; border:none; font-family: 'Do Hyeon', sans-serif; font-size: 20px; padding-bottom: 0;}
+.overlay {position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.4); transition: opacity 400ms; visibility: hidden; opacity: 0;}
+.overlay:target { visibility: visible; opacity: 1;}
+.popup {height: 20%; margin: auto; padding: 10px; background: #464646; border-radius: 0px; width: 70%; position: absolute; left:0; right:0; top:0; bottom:0; transition: opacity 0.5s ease-in-out; color: #fff;}
+.header2 {width: 100%; height: 70px;  top: 0; background-color: #464646; padding:0; margin:0; vertical-align: middle; font-family: 'Noto Sans KR', sans-serif;}
+.popup .close {line-height: 30px; width:30px; position: absolute; top: 15px; right: 10px; transition: opacity 0.5s; font-size: 40px; text-decoration: none; color: #fff; padding:0px; margin:0px;}
+.reserv_container {font-family: 'Noto Sans KR', sans-serif; align: center; text-align: center;}
+.text_reservation {text-align: center; font-size: 15px;}
+.info_reservation {text-align: center; font-size: 12px; opacity: 0.5;}
+.table_rerservation {width: 85%; align: center; margin: 10px; border: none; table-layout: fixed; border-collapse: collapse; text-align:center;}
+.table_thead {width: 25%; background-color: #464646; color: #FFFFFF; font-family: 'Noto Sans KR', sans-serif; border: 1px solid #464646; padding: 10px;}
+.table_td { text-align: center; width: 12%; border-top: 1px solid #464646; border-bottom: 1px solid #464646; border-right: 1px dotted rgba(70, 70, 70, 0.5); font-family: 'Noto Sans KR', sans-serif; margin: 0;}
+.table_thead_text2 {font-size: 23px; line-height: 23px; font-weight: bold; margin-bottom: 0px;}
+.table_thead_text1 {font-size: 8px; line-height: 8px; margin: 0px;}
+.img_poster { margin-bottom: 2px;}
+.info_reservation {margin: 0px;}
+.form_popup {height: 80px; margin: auto; position: absolute; left:0; right:0; top:0; bottom:0; }body{background-color: white; color:black; font-family: 'Do Hyeon', sans-serif; font-size: 23px; padding:0; margin: 0;}
+header{width:100%; position: relative; top:0;}
+.headerText{position: relative; text-align: center; height: 70px; margin: auto; color: white; line-height: 70px;}
+.header1{width: 100%; height: 70px;  top: 0; background-color: #000000; padding:0; margin:0; vertical-align: middle;}
+.nav{display: inline; width:100%;}
+section{font-family: 'Noto Sans KR', sans-serif; font-size: 16px;}
+.button{ font-family: 'Do Hyeon', sans-serif; font-size: 15px; width:32%; height: 50px; border:none; padding:0; margin:0; background-color: white;}
+.notselected{color: #000000; border-bottom: 5px solid black;}
+.selected{color: #FF0000; border-bottom: 5px solid red;}
+.section0, .section1, .section2{padding:0; text-align: left; position: static;}
+.buyBtn{padding:20px; font-family: 'Do Hyeon', sans-serif; font-size: 15px;width:33%; height: 50px; border:none;  margin:0; background-color: white; border: 1px black solid;}
+.info{width: 60%;}
+.thumbnail{width: 30%;}
+.visible{width: 100%;}
+.invisible{display:none;}
+input{width:70%; height: 30px; margin: 3px; border: 1px solid black; border-radius: 0;}
+.input_bank{width: 30%;}
+.input_account{width: 50%;}
+input[type="submit"]{width:30%; height: 35px; margin: 3px; border: 1px solid black; align:center; background-color: #FFFFFF; border-radius: 0;}
+#nick, #name, #phone, .label, #bank {margin-left: 15px; border-radius: 0;}
+a{text-decoration: none;}
+.text{font-family: 'Noto Sans KR', sans-serif; font-size: 13px;}
+.text2{font-family: 'Do Hyeon', sans-serif;}
+.text2{font-family: 'Noto Sans KR', sans-serif; margin:0;}
+table{border:1px solid black; width:90%; font-size: 11px;}
+input[type="checkbox"]{width: 15px; height: 15px; border-radius: 0; margin : 5px; vertical-align: middle;}
+hr{color: black; opacity: 50%}
+img{margin:0; padding:0;}
+.img{line-height: 0;}
+.success{height: 100px; border:none; font-family: 'Do Hyeon', sans-serif; font-size: 20px; padding-bottom: 0;}
+.overlay {position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.4); transition: opacity 400ms; visibility: hidden; opacity: 0;}
+.overlay:target { visibility: visible; opacity: 1;}
+.popup {height: 20%; margin: auto; padding: 10px; background: #464646; border-radius: 0px; width: 70%; position: absolute; left:0; right:0; top:0; bottom:0; transition: opacity 0.5s ease-in-out; color: #fff;}
+.header2 {width: 100%; height: 70px;  top: 0; background-color: #464646; padding:0; margin:0; vertical-align: middle; font-family: 'Noto Sans KR', sans-serif;}
+.popup .close {line-height: 30px; width:30px; position: absolute; top: 10px; right: 5px; transition: opacity 0.5s; font-size: 40px; text-decoration: none; color: #fff; padding:0px; margin:0px;}
+.reserv_container {font-family: 'Noto Sans KR', sans-serif; align: center; text-align: center;}
+.text_reservation {text-align: center; font-size: 15px;}
+.info_reservation {text-align: center; font-size: 12px; opacity: 0.5;}
+.table_rerservation {width: 85%; align: center; margin: 10px; border: none; table-layout: fixed; border-collapse: collapse; text-align:center;}
+.table_thead {width: 25%; background-color: #464646; color: #FFFFFF; font-family: 'Noto Sans KR', sans-serif; border: 1px solid #464646; padding: 10px;}
+.table_td { text-align: center; width: 12%; border-top: 1px solid #464646; border-bottom: 1px solid #464646; border-right: 1px dotted rgba(70, 70, 70, 0.5); font-family: 'Noto Sans KR', sans-serif; margin: 0;}
+.table_thead_text2 {font-size: 23px; line-height: 23px; font-weight: bold; margin-bottom: 0px;}
+.table_thead_text1 {font-size: 8px; line-height: 8px; margin: 0px;}
+.img_poster { margin-bottom: 2px; width: 85%;}
+.info_reservation {margin: 0px;}
+.form_popup {height: 85px; margin: auto; position: absolute; left:0; right:0; top:0; bottom:0; }
+.popup_form {width: 75%; margin: 0 auto 17px; height: 35px; margin-left: 0;}
+.done {background-color: #fff; color: #464646; font-family: 'Noto Sans KR', sans-serif;  border-radius: 0; -webkit-appearance: none; margin: 17px auto 0; }

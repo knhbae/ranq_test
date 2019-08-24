@@ -1,0 +1,120 @@
+{% extends 'ranq/t_base.html' %}
+
+{% block content %}
+  <div class="post">
+    <h1>{{ q.title }}</h1>
+    <!-- <p>{{ q.desc|linebreaksbr }}</p> -->
+    <img src='/media/{{ q.image }}'>
+    <h1>나의 연봉은 대한민국 상위</h1>
+    {% if a.rank_income == 90 %}
+    <h1>{{ a.rank_income }} % 이하입니다!! 힘내세요..ㅠㅠ</h1>
+    {% else %}
+    <h1>{{ a.rank_income }} % 이상입니다!!</h1>
+    {% endif %}
+
+  <div class="table-users">
+    <div class="header">상세 내역</div>
+      <table>
+        <tr>
+    	    <p><td>연봉</td><td colspan = "3">{{ a.y_income }}만 원</td></p>
+        </tr>
+        <tr>
+          <p><td>연봉 랭킹</td><td colspan = "3">{{ a.rank_income }} % 이상</td></p>
+        </tr>
+        <tr>
+    	    <p><td>월급여(공제전)</td><td colspan = "3">{{ a.m_income }} 만원</td></p>
+        </tr>
+        <tr>
+    	    <p><td>월급여(공제후)</td><td colspan = "3">{{ a.de_income }} 만원</td></p>
+        </tr>
+        <tr>
+        </table>
+  </div>
+  <div class="table-users">
+    <div class="header">공제 내역</div>
+        <table>
+          <p><td>공제 합계</td><td colspan = "3">{{ a.de_amount }} 만원</td></p>
+        </tr>
+        <tr align = "center" bgcolor="skybule">
+        	<td>4대보험(합)</td>
+        	<td>{{ b }} 만원</td>
+        	<td>세금(합)</td>
+        	<td>{{ c }} 만원</td>
+        </tr>
+        <tr>
+        	<td>국민연금</td>
+        	<td>{{ a.na_pension }} 만원</td>
+        	<td>소득세</td>
+          <td>{{ a.in_tax }} 만원</td>
+        </tr>
+        <tr>
+        	<td>건강보험</td>
+        	<td>{{ a.he_insurance }} 만원</td>
+        	<td>주민세</td>
+          <td>{{ a.resi_tax }} 만원</td>
+        </tr>
+        <tr>
+        	<td>장기요양</td>
+        	<td>{{ a.a_insurance }} 만원</td>
+          <td rowspan="2" colspan="2"></td>
+        </tr>
+        <tr>
+        	<td>고용보험</td>
+        	<td>{{ a.em_insurance }} 만원</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  </div>
+{% endblock %}
+<!-- <table border="1" bordercolor="blue" width ="500" height="300" align = "center" >
+  <tr bgcolor="blue" align ="center">
+    <p><td>내용</td><td colspan = "3" span style="color:white">오늘의 수입/지출</td></p>
+  </tr>
+  <tr bgcolor="blue" align ="center">
+    <p><td>내용</td><td colspan = "3" span style="color:white">오늘의 수입/지출</td></p>
+  </tr>
+  <tr bgcolor="blue" align ="center">
+    <p><td>내용</td><td colspan = "3" span style="color:white">오늘의 수입/지출</td></p>
+  </tr>
+  <tr bgcolor="blue" align ="center">
+    <p><td>내용</td><td colspan = "3" span style="color:white">오늘의 수입/지출</td></p>
+  </tr>
+  <tr bgcolor="blue" align ="center">
+    <p><td>내용</td><td colspan = "3" span style="color:white">오늘의 수입/지출</td></p>
+  </tr>
+  <tr align = "center" bgcolor="skybule">
+    <td>내용</td>
+    <td>수입</td>
+    <td>지출</td>
+    <td>지출</td>
+  </tr>
+  <tr align = "center" bgcolor="skybule">
+    <td>내용</td>
+    <td>수입</td>
+    <td>지출</td>
+    <td>지출</td>
+  </tr>
+  <tr align = "center" bgcolor="skybule">
+    <td>내용</td>
+    <td>수입</td>
+    <td>지출</td>
+    <td>지출</td>
+  </tr>
+  <tr align = "center" bgcolor="skybule">
+    <td>내용</td>
+    <td>수입</td>
+    <td>지출</td>
+    <td>지출</td>
+  </tr>
+  <tr>
+    <td>월급!</td>
+    <td>1,000,000</td>
+    <td rowspan="2" colspan="2" align = "center" bgcolor="skyblue">총계</td>
+  </tr>
+  <tr>
+    <td>점심값</td>
+    <td></td>
+  </tr>
+</table> -->

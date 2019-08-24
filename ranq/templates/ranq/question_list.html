@@ -1,0 +1,13 @@
+{% extends 'ranq/base.html' %}
+{% block content %}
+    {% for q in questions %}
+        <div class="post">
+            <div class="date">
+                {{ q.created_date }}
+            </div>
+            <h1><a href="{% url 'question_detail' pk=q.pk %}">{{ q.title }}</a></h1>
+            <p>{{ q.desc|linebreaksbr }}</p>
+            <!-- <a href="{% url 'question_detail' pk=q.pk %}">Comments: {{ post.approved_comments.count }}</a> -->
+        </div>
+    {% endfor %}
+{% endblock %}
