@@ -1,0 +1,67 @@
+{% extends 'ranq/t_base.html' %}
+
+{% block content %}
+  <div class="post">
+    <h1>나의 가능성은..</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+      <!-- <table id="income_details_2" style="display:none;"> -->
+      <table>
+       <tr align = "center" bgcolor="skybule">
+       	<td>현재 연봉(만원)</td>
+       	<td>{{form.cur_income}}</td>
+       </tr>
+       <tr>
+       	<td>목표 연봉(만원)</td>
+       	<td>{{form.goal_income}}</td>
+       </tr>
+       <tr>
+       	<td>준비 기간(년)</td>
+       	<td>{{form.period}}</td>
+       </tr>
+       </table>
+
+       <table>
+       <tr>
+          <td colspan="2"> 자기 개발 항목 입력 </td>
+       </tr>
+       <tr>
+       	<td>항목(예시:독서)</td>
+       	<td>1주당 투자시간</td>
+       </tr>
+       <tr>
+         <td>{{ form.plan_1 }}</td>
+         <td>{{ form.time_1 }}<input class="Bt2" id="Tr1" type="button" value=" + " onclick="showOnOffTr('#tr_2','Tr1')"/>
+         </td>
+       </tr>
+       <tr id="tr_2" style="display:none;">
+         <td>{{ form.plan_2 }}</td>
+         <td>{{ form.time_2 }}<input class="Bt2" id="Tr2" type="button" value=" + " onclick="showOnOffTr('#tr_3','Tr2')"/>
+         </td>
+       </tr>
+       <tr id="tr_3" style="display:none;">
+         <td>{{ form.plan_3 }}</td>
+         <td>{{ form.time_3 }}<input class="Bt2" id="Tr3" type="button" value=" + " onclick="showOnOffTr('#tr_4','Tr3')"/>
+         </td>
+       </tr>
+       <tr id="tr_4" style="display:none;">
+         <td>{{ form.plan_4 }}</td>
+         <td>{{ form.time_4 }}<input class="Bt2" id="Tr4" type="button" value=" + " onclick="showOnOffTr('#tr_5','Tr4')"/>
+         </td>
+       </tr>
+       <tr id="tr_5" style="display:none;">
+         <td>{{ form.plan_5 }}</td>
+         <td>{{ form.time_5 }}<input class="Bt2" id="Tr5" type="button" value=" + " onclick="showOnOffTr('#tr_6','Tr5')"/>
+         </td>
+       </tr>
+       <tr id="tr_6" style="display:none;">
+         <td>{{ form.plan_6 }}</td>
+         <td>{{ form.time_6 }}</td>
+       </tr>
+     </table>
+     <input type="submit" value="알아보기">
+    </form>
+  </div>
+{% endblock %}
+<!-- {{ form.as_p }}
+<button type="submit" class="save btn btn-default">알아보기</button>
+</br> -->

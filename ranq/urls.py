@@ -12,6 +12,11 @@ urlpatterns = [
     # path('q/<int:pk>/a_result/', views.question_a_result, name='question_a_result'),
     # path('a/<int:pk>/', views.a_detail, name='question_detail'),
     path('post/new/', views.question_new, name='question_new'),
+    #Test
+    path('t/income/', views.test_income, name='test_income'),       #income Test
+    #Goal
+    path('g/income/', views.goal_income, name='goal_income'),       #Possiblity Goal Income
+
 ]
 
 urlpatterns += static(

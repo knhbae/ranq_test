@@ -23,17 +23,23 @@ class Short_answer(models.Model):
     def __str__(self):
         return self.title
 
-class Info_Income(models.Model):
-    y_income	=	models.FloatField()
-    m_income	=	models.FloatField(null=True, blank=True)
-    de_income	=	models.FloatField(null=True, blank=True)
-    de_amount	=	models.FloatField(null=True, blank=True)
-    na_pension	=	models.FloatField(null=True, blank=True)
-    he_insurance	=	models.FloatField(null=True, blank=True)
-    a_insurance	=	models.FloatField(null=True, blank=True)
-    em_insurance	=	models.FloatField(null=True, blank=True)
-    in_tax	=	models.FloatField(null=True, blank=True)
-    resi_tax	=	models.FloatField(null=True, blank=True)
+#목표 연봉과 노력할 것 들
+class Goal_Income(models.Model):
+    cur_income = models.FloatField()
+    goal_income = models.FloatField()
+    period = models.FloatField()
+    plan_1 = models.CharField(max_length=30, null=True, blank=True)
+    time_1 = models.FloatField(null=True, blank=True,default=0)
+    plan_2 = models.CharField(max_length=30, null=True, blank=True)
+    time_2 = models.FloatField(null=True, blank=True,default=0)
+    plan_3 = models.CharField(max_length=30, null=True, blank=True)
+    time_3 = models.FloatField(null=True, blank=True,default=0)
+    plan_4 = models.CharField(max_length=30, null=True, blank=True)
+    time_4 = models.FloatField(null=True, blank=True,default=0)
+    plan_5 = models.CharField(max_length=30, null=True, blank=True)
+    time_5 = models.FloatField(null=True, blank=True,default=0)
+    plan_6 = models.CharField(max_length=30, null=True, blank=True)
+    time_6 = models.FloatField(null=True, blank=True,default=0)
 
 class U_Info_Income(models.Model):
     y_income	=	models.FloatField()
@@ -48,7 +54,20 @@ class U_Info_Income(models.Model):
     in_tax	=	models.FloatField(null=True, blank=True)
     resi_tax	=	models.FloatField(null=True, blank=True)
 
+#for U_Info_Income
+class Info_Income(models.Model):
+    y_income	=	models.FloatField()
+    m_income	=	models.FloatField(null=True, blank=True)
+    de_income	=	models.FloatField(null=True, blank=True)
+    de_amount	=	models.FloatField(null=True, blank=True)
+    na_pension	=	models.FloatField(null=True, blank=True)
+    he_insurance	=	models.FloatField(null=True, blank=True)
+    a_insurance	=	models.FloatField(null=True, blank=True)
+    em_insurance	=	models.FloatField(null=True, blank=True)
+    in_tax	=	models.FloatField(null=True, blank=True)
+    resi_tax	=	models.FloatField(null=True, blank=True)
 
+#for U_Info_Income
 class Rank_Income(models.Model):
     y_income = models.FloatField()
     rank = models.FloatField()

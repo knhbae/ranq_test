@@ -1,0 +1,38 @@
+{% extends 'ranq/t_base.html' %}
+
+{% block content %}
+  <div class="post">
+    <h1>당신이 {{ ans.period }}년 안에 </h1>
+    <p>연봉 {{ ans.goal_income }}만원을 넘을 가능성은</p>
+    {% if prob >= 30 %}
+    <p class="main-text">{{ prob }}% 이상입니다!!^0^!!</p>
+    {% else %}
+    <p class="main-text">{{ prob }}% 입니다. ㅠ.ㅠ..노오력이..
+    </p>
+    <p></p>
+    {% endif %}
+  </div>
+  <div class="backbutten">
+    <input type="button" value=" ◀ 다시하기 " onclick="location.href='/g/income/'"/>
+  </div>
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://rank1-1.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endblock %}

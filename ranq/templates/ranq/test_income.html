@@ -1,0 +1,19 @@
+{% extends 'ranq/t_base.html' %}
+
+{% block content %}
+  <div class="post">
+    <h1>연봉 Ranking~!</h1>
+    <p class="main-text">나의 연봉은 상위 몇%일까?</p>
+    <img src='/media/{{ q.image }}'>
+    <p class="main-text">{{ q.ques|linebreaksbr }}</p>
+    <form method="POST" class="post-form">
+      {% csrf_token %}
+        <label>{{form.y_income}}</label>만원
+        <input type="submit" value="알아보기">
+    </form>
+  </div>
+
+{% endblock %}
+<!-- {{ form.as_p }}
+<button type="submit" class="save btn btn-default">알아보기</button>
+</br> -->

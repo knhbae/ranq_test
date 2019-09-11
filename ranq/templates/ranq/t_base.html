@@ -10,30 +10,124 @@
   <meta name="viewport" content="width=device-width">
 
   <link rel="stylesheet" href="{% static "css/main.css" %}">
-  <!-- Main Style Sheet -->
-
-  <!-- Modernizr -->
-  <!-- Respond.js for IE 8 or less only -->
-  <!--[if (lt IE 9) & (!IEMobile)]>
-  <script src="js/vendor/respond.min.js"></script>
-  <![endif]-->
-  <!-- <link rel="stylesheet" href="{% static "css/css" %}">
-  <link rel="stylesheet" href="{% static "css/css(1)" %}">
-  <link rel="stylesheet" href="{% static "css/css(2)" %}">
-  <link rel="stylesheet" href="{% static "css/css(3)" %}">
-  <link rel="stylesheet" href="{% static "css/css(4)" %}"> -->
+  <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
   <style>
   </style>
 
 </head>
 
       <body class="homepage" data-spy="scroll" style="">
+        <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+      	function showOnOffTable(TdId, BtId) {
+          var elem = document.getElementById(BtId);
+          if (elem.value==" ▲ "){
+            elem.value = " ▼ ";
+        		$(TdId).css('display', 'none');
+          }
+          else {
+            elem.value = " ▲ ";
+        		$(TdId).css('display', '');
+          }
+      	}
+        function showOnOffTr(TdId, BtId) {
+          var elem = document.getElementById(BtId);
+          // var elem2 = document.getElementById(TrId);
+          // if (elem.value==" - "){
+          //   elem.value = " + ";
+          //   $(TdId).css('display', 'none');
+          // }
+          if (elem.value==" + ") {
+            $(TdId).css('display', '');
+          }
+        }
+        </script>
+        <!-- SNS 공유용 주소 연결 용 -->
+        <script type="text/javascript" async>
+        var url_default_ks = "https://story.kakao.com/share?url=";
+        var url_default_fb = "https://www.facebook.com/sharer/sharer.php?u=";
+        var url_default_tw_txt = "https://twitter.com/intent/tweet?text=";
+        var url_default_tw_url = "&url=";
+        var url_default_band = "http://band.us/plugin/share?body=";
+        var url_route_band = "&route=";
+        var url_default_naver = "http://share.naver.com/web/shareView.nhn?url=";
+        var title_default_naver = "&title=";
+        var url_this_page = location.href;
+        var title_this_page = document.title;
+        var url_combine_ks = url_default_ks + url_this_page;
+        var url_combine_fb = url_default_fb + url_this_page;
+        var url_combine_tw = url_default_tw_txt + document.title + url_default_tw_url + url_this_page;
+        var url_combine_band = url_default_band + encodeURI(url_this_page)+ '%0A' + encodeURI(title_this_page)+'%0A' + '&route=tistory.com'; var url_combine_naver = url_default_naver + encodeURI(url_this_page) + title_default_naver + encodeURI(title_this_page);
+
+        function copyTextToClipboard(text) {
+          var textArea = document.createElement("textarea");
+
+          //
+          // *** This styling is an extra step which is likely not required. ***
+          //
+          // Why is it here? To ensure:
+          // 1. the element is able to have focus and selection.
+          // 2. if element was to flash render it has minimal visual impact.
+          // 3. less flakyness with selection and copying which **might** occur if
+          //    the textarea element is not visible.
+          //
+          // The likelihood is the element won't even render, not even a flash,
+          // so some of these are just precautions. However in IE the element
+          // is visible whilst the popup box asking the user for permission for
+          // the web page to copy to the clipboard.
+          //
+
+          // Place in top-left corner of screen regardless of scroll position.
+          textArea.style.position = 'fixed';
+          textArea.style.top = 0;
+          textArea.style.left = 0;
+
+          // Ensure it has a small width and height. Setting to 1px / 1em
+          // doesn't work as this gives a negative w/h on some browsers.
+          textArea.style.width = '2em';
+          textArea.style.height = '2em';
+
+          // We don't need padding, reducing the size if it does flash render.
+          textArea.style.padding = 0;
+
+          // Clean up any borders.
+          textArea.style.border = 'none';
+          textArea.style.outline = 'none';
+          textArea.style.boxShadow = 'none';
+
+          // Avoid flash of white box if rendered for any reason.
+          textArea.style.background = 'transparent';
+
+
+          textArea.value = text;
+
+          document.body.appendChild(textArea);
+
+          textArea.select();
+
+          try {
+            var successful = document.execCommand('copy');
+            var msg = successful ? 'successful' : 'unsuccessful';
+            console.log('Copying text command was ' + msg);
+          } catch (err) {
+            console.log('Oops, unable to copy');
+          }
+
+          document.body.removeChild(textArea);
+        }
+
+        function CopyLink() {
+          copyTextToClipboard(location.href);
+          window.alert("Url Copy Completed!");
+        }
+        </script>
+        <!-- 현재 URL 복사 script -->
         <header>
           <div class="header1">
             <a href="/"><p class="headerText">Test World!</p></a>
           </div>
           <div class="nav">
-                <button class="button notselected" name="navBtn" onclick="location.href='/t/2/'">연봉 Rank</button>
+                <button class="button notselected" name="navBtn" onclick="location.href='/t/income/'">연봉 Rank</button>
                 <button class="button notselected" name="navBtn" onclick="location.href='/t/3/'">IQ Rank</button>
                 <button class="button notselected" name="navBtn" onclick="location.href='/t/5/'">참을성 Rank</button>
           </div>
@@ -46,5 +140,28 @@
                 </div>
             </div>
         </div>
+        <!-- SNS버튼 시작 -->
+        <div id="link">↓공유하기↓</div>
+        <div style="width: 100%; text-align: center; margin-bottom: 64px;">
+          <!-- 페이스북 공유 버튼 -->
+          <a href="" onclick="window.open(url_combine_fb, '', 'scrollbars=no, width=600, height=600'); return false;">
+          <img src="https://t1.daumcdn.net/cfile/tistory/998025335982EA9936" title="페이스북으로 공유하기" class="sharebtn_custom" style="width: 32px;"></a>
+          <!-- 트위터 공유 버튼 -->
+          <a href="" onclick="window.open(url_combine_tw, '', 'scrollbars=no, width=600, height=600'); return false;">
+          <img src="https://t1.daumcdn.net/cfile/tistory/99C6E9335982EA9902" title="트위터로 공유하기" class="sharebtn_custom" style="width: 32px;"></a>
+          <!-- 카카오 스토리 공유 버튼 -->
+          <a href="" onclick="window.open(url_combine_ks, '', 'scrollbars=no, width=600, height=600'); return false;"><img src="https://t1.daumcdn.net/cfile/tistory/995C42335982EA9908" title="카카오스토리로 공유하기" class="sharebtn_custom" style="width: 32px;"></a>
+          <!-- 네이버 공유 버튼 -->
+          <a href="" onclick="window.open(url_combine_naver, '', 'scrollbars=no, width=600, height=600'); return false;"><img src="https://t1.daumcdn.net/cfile/tistory/9995CD335982EA991B" title="네이버로 공유하기" class="sharebtn_custom" style="width: 32px;"></a>
+          <!-- 밴드 공유 버튼 -->
+          <a href="" onclick="window.open(url_combine_band, '', 'scrollbars=no, width=584, height=635'); return false;"><img src="https://t1.daumcdn.net/cfile/tistory/999728335982EA992C" title="밴드로 공유하기" class="sharebtn_custom" style="width: 32px;"></a>
+
+          <a href="" onclick="CopyLink()"><img src="https://mblogthumb-phinf.pstatic.net/20150930_180/koowq_1443624670098O5EBd_PNG/%B8%B5%C5%A9_%BE%C6%C0%CC%C4%DC-03.png?type=w2" title="주소 복사하기" class="sharebtn_custom" style="width: 32px;"></a>
+
+          <!-- <button onclick="CopyLink()">Click me</button> -->
+
+
+        </div>
+        <!-- SNS버튼 끝 -->
     </body>
 </html>
