@@ -145,11 +145,11 @@ def test_endure(request):
         if form.is_valid():
             ans = form.save(commit=False)
             # period = ans.period  #카피본
-            prob = 1 #np.round_(prob,1) #카피
+            ans1 = ans.e_time
             ans.save()
             ## 결과 페이지로 가는 것으로 수정해야함 2019.08.07 수정
             # return redirect('question_list') #, pk=post.pk)
-            return render(request, 'ranq/goal_prob_result.html',{'ans':ans, 'prob':prob})
+            return render(request, 'ranq/test_endure_result.html',{'ans1':ans1})
 
     else:
         form = Endure_TestForm()

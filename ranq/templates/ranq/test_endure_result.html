@@ -1,0 +1,49 @@
+{% extends 'ranq/t_base.html' %}
+
+{% block content %}
+  <div class="post">
+    <h1>당신이 참은 시간은: {{ ans1 }} 초 입니다. </h1>
+    {% if ans1 < 1.0 %}
+    <img src="/media/e_rst_9.png" title="9등급" style="width:80%">
+    {% elif  ans1 < 5.0  %}
+    <img src="/media/e_rst_8.png" title="8등급" style="width:80%">
+    {% elif  ans1 < 10.0  %}
+    <img src="/media/e_rst_7.png" title="7등급" style="width:80%">
+    {% elif  ans1 < 20.0  %}
+    <img src="/media/e_rst_6.png" title="6등급" style="width:80%">
+    {% elif  ans1 < 30.0  %}
+    <img src="/media/e_rst_5.png" title="5등급" style="width:80%">
+    {% elif  ans1 < 45.0  %}
+    <img src="/media/e_rst_4.png" title="4등급" style="width:80%">
+    {% elif  ans1 < 60.0  %}
+    <img src="/media/e_rst_3.png" title="3등급" style="width:80%">
+    {% elif  ans1 < 90.0  %}
+    <img src="/media/e_rst_2.png" title="2등급" style="width:80%">
+    {% else %}
+    <img src="/media/e_rst_1.png" title="1등급" style="width:80%">
+    {% endif %}
+  </div>
+  <div class="backbutten">
+    <input type="button" value=" ◀ 다시하기 " onclick="location.href='/t/endure/'"/>
+  </div>
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://rank1-1.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endblock %}
