@@ -121,6 +121,20 @@
           window.alert("Url Copy Completed!");
         }
         </script>
+        <!-- 참을성 Test용 -->
+        <script type="text/javascript">
+          var d = new Date();
+          var timerStart = d.getTime();
+          function Test_Endure(DivId1, DivId2) {
+            var a = new Date();
+            // document.write("당신이 참은 시간은: ", String((a.getTime()-timerStart)/1000)," 초 입니다.");
+            document.all("test_endure").innerHTML="측정 완료!!"
+            document.my_form.e_time.value = (a.getTime()-timerStart)/1000;
+            $(DivId1).css('display', 'none');
+            $(DivId2).css('display', '');
+            // window.alert("당신이 참은 시간은: ", String(d.getTime()-timerStart)," 초 입니다.");
+          }
+        </script>
         <!-- 현재 URL 복사 script -->
         <header>
           <div class="header1">
@@ -129,7 +143,7 @@
           <div class="nav">
                 <button class="button notselected" name="navBtn" onclick="location.href='/t/income/'">연봉 Rank</button>
                 <button class="button notselected" name="navBtn" onclick="location.href='/t/3/'">IQ Rank</button>
-                <button class="button notselected" name="navBtn" onclick="location.href='/t/5/'">참을성 Rank</button>
+                <button class="button notselected" name="navBtn" onclick="location.href='/t/endure/'">참을성 Rank</button>
           </div>
         </header>
         <div class="content container">
@@ -141,6 +155,8 @@
             </div>
         </div>
         <!-- SNS버튼 시작 -->
+        <br>
+        <br>
         <div id="link">↓공유하기↓</div>
         <div style="width: 100%; text-align: center; margin-bottom: 64px;">
           <!-- 페이스북 공유 버튼 -->

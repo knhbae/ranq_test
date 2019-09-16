@@ -1,0 +1,26 @@
+{% extends 'ranq/t_base.html' %}
+{% block content %}
+
+<div class="post">
+  <h1>나의 참을성은..</h1>
+  <div id="test_endure">
+    <img src="/media/giphy.gif" alt="참을성 테스트" />
+  </div>
+  <div class="backbutten">
+    <input id="backbutten" type="button" value=" ◀ 새로고침 " onclick="Test_Endure(backbutten, Endure_Rst_Check)"/>
+  </div>
+  <div class="Endure_Rank" id="Endure_Rst_Check" style="display:none;">
+    <form method="POST" class="post-form" name="my_form">{% csrf_token %}
+      <!-- {{ form.e_time }}
+      <input type="submit" value=" 최종확인 ▶"> -->
+      {{ form.non_field_errors }}
+      <div class="fieldWrapper" style="visibility:hidden;">
+        {{ form.e_time.errors }}
+        <label for="e_time">참은시간:</label>
+        {{ form.e_time }}
+      </div>
+      <p><input type="submit" value=" 결과확인 ▶"></p>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Question, Rank_Income, Info_Income, U_Info_Income, Goal_Income
-from .forms import QuestionForm, Short_answerForm, Income_answerForm, Goal_IncomeForm
+from .models import Question, Rank_Income, Info_Income, U_Info_Income, Goal_Income, Endure_Test
+from .forms import QuestionForm, Short_answerForm, Income_answerForm, Goal_IncomeForm, Endure_TestForm
 import numpy as np
 from scipy.interpolate import interp1d
 from scipy import array
@@ -138,3 +138,19 @@ def goal_income(request):
     else:
         form = Goal_IncomeForm()
     return render(request,  'ranq/goal_income.html',{'form': form})
+
+def test_endure(request):
+    if request.method == "POST":
+        form = Endure_TestForm(request.POST)
+        if form.is_valid():
+            ans = form.save(commit=False)
+            # period = ans.period  #카피본
+            prob = 1 #np.round_(prob,1) #카피
+            ans.save()
+            ## 결과 페이지로 가는 것으로 수정해야함 2019.08.07 수정
+            # return redirect('question_list') #, pk=post.pk)
+            return render(request, 'ranq/goal_prob_result.html',{'ans':ans, 'prob':prob})
+
+    else:
+        form = Endure_TestForm()
+    return render(request,'ranq/test_endure.html',{'form': form})

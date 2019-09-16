@@ -1,5 +1,5 @@
 from django import forms
-from .models import Question, Short_answer, U_Info_Income, Goal_Income
+from .models import Question, Short_answer, U_Info_Income, Goal_Income, Endure_Test
 from django.forms.models import ModelForm
 
 class QuestionForm(forms.ModelForm):
@@ -27,3 +27,8 @@ class Goal_IncomeForm(forms.ModelForm):
                   'plan_4','time_4',
                   'plan_5','time_5',
                   'plan_6','time_6')
+
+class Endure_TestForm(forms.ModelForm):
+    class Meta:
+        model = Endure_Test
+        fields = ('e_time',)

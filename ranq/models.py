@@ -71,3 +71,7 @@ class Info_Income(models.Model):
 class Rank_Income(models.Model):
     y_income = models.FloatField()
     rank = models.FloatField()
+
+#for 참을성 TEST
+class Endure_Test(models.Model):
+    e_time = models.FloatField()
