@@ -7,15 +7,15 @@
       <!-- <table id="income_details_2" style="display:none;"> -->
       <table>
        <tr align = "center" bgcolor="skybule">
-       	<td>현재 연봉(만원)</td>
+       	<td>현재 연봉<br>(만원)</td>
        	<td>{{form.cur_income}}</td>
        </tr>
        <tr>
-       	<td>목표 연봉(만원)</td>
+       	<td>목표 연봉<br>(만원)</td>
        	<td>{{form.goal_income}}</td>
        </tr>
        <tr>
-       	<td>준비 기간(년)</td>
+       	<td>목표 준비<br>기간(년)</td>
        	<td>{{form.period}}</td>
        </tr>
        </table>
@@ -58,7 +58,7 @@
          <td>{{ form.time_6 }}</td>
        </tr>
      </table>
-     <input type="submit" value="알아 보기">
+     <input class="myButton" type="submit" value="확인">
     </form>
   </div>
 {% endblock %}

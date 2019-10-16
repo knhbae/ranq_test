@@ -1,0 +1,83 @@
+{% extends 'ranq/t_base.html' %}
+{% block content %}
+
+<div class="post">
+  <h1>나의 IQ는..</h1>
+  <p class="main-text">현재 98 입니다.</p>
+  <form method="POST" class="post-form" id="iq_q" name="iq_q">
+      {% csrf_token %}
+      {{ form.user_id }}
+      {{ form.score }}
+      <div id="quest01">
+        <p class="main-text">{{ q01.q_desc|linebreaksbr }}</p>
+        <img src='/media/{{ q01.q_img_url }}' style="width:80%">
+        {{ form.non_field_errors }}
+         <div class="fieldWrapper">
+             {{ form.answer_01.errors }}
+             <label for="id_txt_field1">정답: </label>
+             {{ form.answer_01 }}
+        <form id="qa01" method="post">
+          <input type="text">
+          <input type="submit" value="임시입력" onclick="insertform('#iq_q')">
+        </form>
+        <!-- <button id="iq_bt1" onclick="insertform('#iq_q');">입력</button> -->
+        <input type="submit" value="다음" onclick="showOnOffQuestion('#quest01','#quest02')">
+      </div>
+      <!-- <div id="quest02" style="display:none;">
+        <p class="main-text">{{ q02.q_desc|linebreaksbr }}</p>
+        <img src='/media/{{ q02.q_img_url }}' style="width:80%">
+        {{ form.answer_02 }}
+        <input type="submit" value="다음" onclick="showOnOffQuestion('#quest02','#quest03')">
+      </div>
+      <div id="quest03" style="display:none;">
+        <p class="main-text">{{ q03.q_desc|linebreaksbr }}</p>
+        <img src='/media/{{ q03.q_img_url }}' style="width:80%">
+        {{ form.answer_03 }}
+        <input type="submit" value="다음" onclick="showOnOffQuestion('#quest03','#quest04')">
+      </div>
+      <div id="quest04" style="display:none;">
+        <p class="main-text">{{ q04.q_desc|linebreaksbr }}</p>
+        <img src='/media/{{ q04.q_img_url }}' style="width:80%">
+        {{ form.answer_04 }}
+        <input type="submit" value="다음" onclick="showOnOffQuestion('#quest04','#quest05')">
+      </div>
+      <div id="quest05" style="display:none;">
+        <p class="main-text">{{ q05.q_desc|linebreaksbr }}</p>
+        <img src='/media/{{ q05.q_img_url }}' style="width:80%">
+        {{ form.answer_05 }}
+        <input type="submit" value="다음" onclick="showOnOffQuestion('#quest05','#quest06')">
+      </div>
+      <div id="quest06" style="display:none;">
+        <p class="main-text">{{ q06.q_desc|linebreaksbr }}</p>
+        <img src='/media/{{ q06.q_img_url }}' style="width:80%">
+        {{ form.answer_06 }}
+        <input type="submit" value="다음" onclick="showOnOffQuestion('#quest06','#quest07')">
+      </div>
+      <div id="quest07" style="display:none;">
+        <p class="main-text">{{ q07.q_desc|linebreaksbr }}</p>
+        <img src='/media/{{ q07.q_img_url }}' style="width:80%">
+        {{ form.answer_07 }}
+        <input type="submit" value="다음" onclick="showOnOffQuestion('#quest07','#quest08')">
+      </div>
+      <div id="quest08" style="display:none;">
+        <p class="main-text">{{ q08.q_desc|linebreaksbr }}</p>
+        <img src='/media/{{ q08.q_img_url }}' style="width:80%">
+        {{ form.answer_08 }}
+        <input type="submit" value="다음" onclick="showOnOffQuestion('#quest08','#quest09')">
+      </div>
+      <div id="quest09" style="display:none;">
+        <p class="main-text">{{ q09.q_desc|linebreaksbr }}</p>
+        <img src='/media/{{ q09.q_img_url }}' style="width:80%">
+        {{ form.answer_09 }}
+        <input type="submit" value="다음" onclick="showOnOffQuestion('#quest09','#quest10')">
+      </div>
+      <div id="quest10" style="display:none;">
+        <p class="main-text">{{ q10.q_desc|linebreaksbr }}</p>
+        <img src='/media/{{ q10.q_img_url }}' style="width:80%">
+        {{ form.answer_10 }}
+        <input type="submit" value="제출">
+      </div> -->
+      <input type="submit" value="제출">
+  </form>
+</div>
+{% endblock %}

@@ -75,3 +75,34 @@ class Rank_Income(models.Model):
 #for 참을성 TEST
 class Endure_Test(models.Model):
     e_time = models.FloatField()
+
+class Iq_Questions(models.Model):
+    q_num	=	models.CharField(max_length=50)
+    q_img_url	=	models.CharField(max_length=200)
+    q_desc	=	models.CharField(max_length=1000)
+    q_ans	=	models.CharField(max_length=50)
+    q_score	=	models.FloatField()
+
+class Iq_Answers(models.Model):
+    user_id = models.CharField(max_length=50)
+    score	=	models.FloatField()
+    question_01	=	models.CharField(max_length=50)
+    question_02	=	models.CharField(max_length=50)
+    question_03	=	models.CharField(max_length=50)
+    question_04	=	models.CharField(max_length=50)
+    question_05	=	models.CharField(max_length=50)
+    question_06	=	models.CharField(max_length=50)
+    question_07	=	models.CharField(max_length=50)
+    question_08	=	models.CharField(max_length=50)
+    question_09	=	models.CharField(max_length=50)
+    question_10	=	models.CharField(max_length=50)
+    answer_01	=	models.CharField(max_length=50)
+    answer_02	=	models.CharField(max_length=50)
+    answer_03	=	models.CharField(max_length=50)
+    answer_04	=	models.CharField(max_length=50)
+    answer_05	=	models.CharField(max_length=50)
+    answer_06	=	models.CharField(max_length=50)
+    answer_07	=	models.CharField(max_length=50)
+    answer_08	=	models.CharField(max_length=50)
+    answer_09	=	models.CharField(max_length=50)
+    answer_10	=	models.CharField(max_length=50)

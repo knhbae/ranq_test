@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Question, Rank_Income, Info_Income, U_Info_Income, Goal_Income, Endure_Test
-from .forms import QuestionForm, Short_answerForm, Income_answerForm, Goal_IncomeForm, Endure_TestForm
+from .models import Question, Rank_Income, Info_Income, U_Info_Income, Goal_Income, Endure_Test, Iq_Questions, Iq_Answers
+from .forms import QuestionForm, Short_answerForm, Income_answerForm, Goal_IncomeForm, Endure_TestForm, Iq_QuestionsForm, Iq_AnswersForm
 import numpy as np
 from scipy.interpolate import interp1d
 from scipy import array
@@ -154,3 +154,49 @@ def test_endure(request):
     else:
         form = Endure_TestForm()
     return render(request,'ranq/test_endure.html',{'form': form})
+
+def test_iq(request):
+    pk01 = 1
+    pk02 = 2
+    pk03 = 3
+    pk04 = 4
+    pk05 = 5
+    pk06 = 6
+    pk07 = 7
+    pk08 = 8
+    pk09 = 9
+    pk10 = 10
+    q01 = get_object_or_404(Iq_Questions, pk=pk01)
+    q02 = get_object_or_404(Iq_Questions, pk=pk02)
+    q03 = get_object_or_404(Iq_Questions, pk=pk03)
+    q04 = get_object_or_404(Iq_Questions, pk=pk04)
+    q05 = get_object_or_404(Iq_Questions, pk=pk05)
+    q06 = get_object_or_404(Iq_Questions, pk=pk06)
+    q07 = get_object_or_404(Iq_Questions, pk=pk07)
+    q08 = get_object_or_404(Iq_Questions, pk=pk08)
+    q09 = get_object_or_404(Iq_Questions, pk=pk09)
+    q10 = get_object_or_404(Iq_Questions, pk=pk10)
+    # c = q.id
+    # post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = Iq_AnswersForm(request.POST)
+        if form.is_valid():
+            ans = form.save(commit=False)
+            ans.question_01 = q01.q_num
+            ans.question_02 = q02.q_num
+            ans.question_03 = q03.q_num
+            ans.question_04 = q04.q_num
+            ans.question_05 = q05.q_num
+            ans.question_06 = q06.q_num
+            ans.question_07 = q07.q_num
+            ans.question_08 = q08.q_num
+            ans.question_09 = q09.q_num
+            ans.question_10 = q10.q_num
+            # ans.question_id = c
+            a = ans
+            ans.save()
+            return render(request, 'ranq/test_iq_result.html',{'a': a})
+
+    else:
+        form = Iq_AnswersForm()
+    return render(request,'ranq/test_iq.html',{'q01':q01, 'q02':q02, 'q03':q03, 'q04':q04, 'q05':q05, 'q06':q06, 'q07':q07, 'q08':q08, 'q09':q09, 'q10':q10, 'form': form})

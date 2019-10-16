@@ -4,10 +4,10 @@
   <div class="post">
     <h1>{{ q.title }}</h1>
     <p>{{ q.desc|linebreaksbr }}</p>
-    <img src='/media/{{ q.image }}'>
+      <img src='/media/{{ q.image }}'>
     <h1>나의 연봉은? [만원 단위]</h1>
     <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }} 
+        {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Send</button>
     </form>
   </div>

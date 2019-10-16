@@ -15,10 +15,11 @@ urlpatterns = [
     #Test
     path('t/income/', views.test_income, name='test_income'),       #income Test
     #Goal
-    path('t/endure/', views.test_endure, name='test_endure'),       #income Test
+    path('t/endure/', views.test_endure, name='test_endure'),       #endure Test
     #Goal
     path('g/income/', views.goal_income, name='goal_income'),       #Possiblity Goal Income
-
+    #Goal
+    path('t/iq/', views.test_iq, name='test_iq'),       #endure Test
 ]
 
 urlpatterns += static(

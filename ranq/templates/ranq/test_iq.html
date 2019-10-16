@@ -1,0 +1,222 @@
+{% extends 'ranq/t_base.html' %}
+{% block content %}
+<script>
+  function showOnOffQuestion(OffQuestion, OnQuestion) {
+    $(OffQuestion).css('display', 'none');
+    $(OnQuestion).css('display', '');
+  }
+  function showOffQuestion(OffQuestion) {
+    $(OffQuestion).css('display', 'none');
+  }
+  function showOnQuestion(OnQuestion) {
+    $(OnQuestion).css('display', '');
+  }
+  var score = 0.0;
+  var iqscore = 75.0;
+  function insertform(formId, i){
+    // var a_01 = document.getElementById('#qa01').val;
+    var answer = document.getElementsByTagName('input')[i].value;
+    if(answer==""){
+      alert("입력란이 비었습니다.");
+    }
+    else{
+      if(i==0){
+        var nick = document.getElementsByTagName('input')[0].value;
+        document.iq_q.user_id.value = nick;
+        showOnQuestion('#scoreboard');
+        showOnOffQuestion('#quest00','#quest01');
+      }
+      else if(i==1){
+        document.iq_q.answer_01.value = answer;
+        if(answer == "{{ q01.q_ans }}"){
+          score = score + {{ q01.q_score }};
+          document.getElementById('iqscore').innerHTML= iqscore + score;
+        }
+        document.iq_q.score.value = score;
+        showOnOffQuestion('#quest01','#quest02');
+      }
+      else if(i==2){
+        document.iq_q.answer_02.value = answer;
+        if(answer == "{{ q02.q_ans }}"){
+          score = score + {{ q02.q_score }};
+          document.getElementById('iqscore').innerHTML= iqscore + score;
+        }
+        document.iq_q.score.value = score;
+        showOnOffQuestion('#quest02','#quest03');
+      }
+      else if(i==3){
+        document.iq_q.answer_03.value = answer;
+        if(answer == "{{ q03.q_ans }}"){
+          score = score + {{ q03.q_score }};
+          document.getElementById('iqscore').innerHTML= iqscore + score;
+        }
+        document.iq_q.score.value = score;
+        showOnOffQuestion('#quest03','#quest04');
+      }
+      else if(i==4){
+        document.iq_q.answer_04.value = answer;
+        if(answer == "{{ q04.q_ans }}"){
+          score = score + {{ q04.q_score }};
+          document.getElementById('iqscore').innerHTML= iqscore + score;
+        }
+        document.iq_q.score.value = score;
+        showOnOffQuestion('#quest04','#quest05');
+      }
+      else if(i==5){
+        document.iq_q.answer_05.value = answer;
+        if(answer == "{{ q05.q_ans }}"){
+          score = score + {{ q05.q_score }};
+          document.getElementById('iqscore').innerHTML= iqscore + score;
+        }
+        document.iq_q.score.value = score;
+        showOnOffQuestion('#quest05','#quest06');
+      }
+      else if(i==6){
+        document.iq_q.answer_06.value = answer;
+        if(answer == "{{ q06.q_ans }}"){
+          score = score + {{ q06.q_score }};
+          document.getElementById('iqscore').innerHTML= iqscore + score;
+        }
+        document.iq_q.score.value = score;
+        showOnOffQuestion('#quest06','#quest07');
+      }
+      else if(i==7){
+        document.iq_q.answer_07.value = answer;
+        if(answer == "{{ q07.q_ans }}"){
+          score = score + {{ q07.q_score }};
+          document.getElementById('iqscore').innerHTML= iqscore + score;
+        }
+        document.iq_q.score.value = score;
+        showOnOffQuestion('#quest07','#quest08');
+      }
+      else if(i==8){
+        document.iq_q.answer_08.value = answer;
+        if(answer == "{{ q08.q_ans }}"){
+          score = score + {{ q08.q_score }};
+          document.getElementById('iqscore').innerHTML= iqscore + score;
+        }
+        document.iq_q.score.value = score;
+        showOnOffQuestion('#quest08','#quest09');
+      }
+      else if(i==9){
+        document.iq_q.answer_09.value = answer;
+        if(answer == "{{ q09.q_ans }}"){
+          score = score + {{ q09.q_score }};
+          document.getElementById('iqscore').innerHTML= iqscore + score;
+        }
+        document.iq_q.score.value = score;
+        showOnOffQuestion('#quest09','#quest10');
+      }
+      else{
+        document.iq_q.answer_10.value = answer;
+        if(answer == "{{ q10.q_ans }}"){
+          score = score + {{ q10.q_score }};
+          document.getElementById('name').innerHTML= iqscore + score;
+        }
+        document.iq_q.score.value = score;
+        showOnOffQuestion('#quest10','#submitscore');
+      }
+    }
+  }
+</script>
+<div class="post">
+  <div id="scoreboard" style="display:none;">
+    <table>
+      <td>
+        나의 IQ는 현재
+        <p id="iqscore" class="main-text">75</p>
+        입니다.
+      </td>
+    </table>
+  </div>
+  <div id="quest00">
+    <br>
+    <img src='/media/brain1.png'>
+    <input type="text" placeholder="닉네임을 입력해주세요.">
+    <button type="button" class="myButton" onclick="insertform('#iq_q',0);">입력</button>
+  </div>
+
+  <div id="quest01" style="display:none;">
+    <p class="main-text">1. {{ q01.q_desc|linebreaksbr }}</p>
+    <img src='/media/{{ q01.q_img_url }}' style="width:80%">
+    <input type="text" placeholder="정답을 입력해주세요.">
+    <button type="button" class="myButton" onclick="insertform('#iq_q',1);">다음</button>
+  </div>
+  <div id="quest02" style="display:none;">
+    <p class="main-text">2. {{ q02.q_desc|linebreaksbr }}</p>
+    <img src='/media/{{ q02.q_img_url }}' style="width:80%">
+    <input type="text" placeholder="정답을 입력해주세요.">
+    <button type="button" class="myButton" onclick="insertform('#iq_q',2);">다음</button>
+  </div>
+  <div id="quest03" style="display:none;">
+    <p class="main-text">3. {{ q03.q_desc|linebreaksbr }}</p>
+    <img src='/media/{{ q03.q_img_url }}' style="width:80%">
+    <input type="text" placeholder="정답을 입력해주세요.">
+    <button type="button" class="myButton" onclick="insertform('#iq_q',3);">다음</button>
+  </div>
+  <div id="quest04" style="display:none;">
+    <p class="main-text">4. {{ q04.q_desc|linebreaksbr }}</p>
+    <img src='/media/{{ q04.q_img_url }}' style="width:80%">
+    <input type="text" placeholder="정답을 입력해주세요.">
+    <button type="button" class="myButton" onclick="insertform('#iq_q',4);">다음</button>
+  </div>
+  <div id="quest05" style="display:none;">
+    <p class="main-text">5. {{ q05.q_desc|linebreaksbr }}</p>
+    <img src='/media/{{ q05.q_img_url }}' style="width:80%">
+    <input type="text" placeholder="정답을 입력해주세요.">
+    <button type="button" class="myButton" onclick="insertform('#iq_q',5);">다음</button>
+  </div>
+  <div id="quest06" style="display:none;">
+    <p class="main-text">6. {{ q06.q_desc|linebreaksbr }}</p>
+    <img src='/media/{{ q06.q_img_url }}' style="width:80%">
+    <input type="text" placeholder="정답을 입력해주세요.">
+    <button type="button" class="myButton" onclick="insertform('#iq_q',6);">다음</button>
+  </div>
+  <div id="quest07" style="display:none;">
+    <p class="main-text">7. {{ q07.q_desc|linebreaksbr }}</p>
+    <img src='/media/{{ q07.q_img_url }}' style="width:80%">
+    <input type="text" placeholder="정답을 입력해주세요.">
+    <button type="button" class="myButton" onclick="insertform('#iq_q',7);">다음</button>
+  </div>
+  <div id="quest08" style="display:none;">
+    <p class="main-text">8. {{ q08.q_desc|linebreaksbr }}</p>
+    <img src='/media/{{ q08.q_img_url }}' style="width:80%">
+    <input type="text" placeholder="정답을 입력해주세요.">
+    <button type="button" class="myButton" onclick="insertform('#iq_q',8);">다음</button>
+  </div>
+  <div id="quest09" style="display:none;">
+    <p class="main-text">9. {{ q09.q_desc|linebreaksbr }}</p>
+    <img src='/media/{{ q09.q_img_url }}' style="width:80%">
+    <input type="text" placeholder="정답을 입력해주세요.">
+    <button type="button" class="myButton" onclick="insertform('#iq_q',9);">다음</button>
+  </div>
+  <div id="quest10" style="display:none;">
+    <p class="main-text">10. {{ q10.q_desc|linebreaksbr }}</p>
+    <img src='/media/{{ q10.q_img_url }}' style="width:80%">
+    <input type="text" placeholder="정답을 입력해주세요.">
+    <button type="button" class="myButton" onclick="insertform('#iq_q',10);">다음</button>
+  </div>
+  <form method="POST" class="post-form" id="iq_q" name="iq_q" >
+    {% csrf_token %}
+    <table width ="1" height="1" style="display:none;">
+      <td>
+          {{ form.score }}
+          {{ form.user_id }}
+          {{ form.answer_01 }}
+          {{ form.answer_02 }}
+          {{ form.answer_03 }}
+          {{ form.answer_04 }}
+          {{ form.answer_05 }}
+          {{ form.answer_06 }}
+          {{ form.answer_07 }}
+          {{ form.answer_08 }}
+          {{ form.answer_09 }}
+          {{ form.answer_10 }}
+      </td>
+    </table>
+    <div id="submitscore" style="display:none;">
+      <input  class="myButton" type="submit" value="확인">
+    </div>
+  </form>
+</div>
+{% endblock %}

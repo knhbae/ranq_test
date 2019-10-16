@@ -2,14 +2,14 @@
 
 {% block content %}
   <div class="post">
-    <h1>연봉 Ranking~!</h1>
+    <br>
     <p class="main-text">나의 연봉은 상위 몇%일까?</p>
-    <img src='/media/{{ q.image }}'>
+    <img src='/media/incometest1.png'>
     <p class="main-text">{{ q.ques|linebreaksbr }}</p>
     <form method="POST" class="post-form">
       {% csrf_token %}
-        <label>{{form.y_income}}</label>만원
-        <input type="submit" value="알아보기">
+        <label>{{form.y_income}}</label>만원<br><br>
+        <input class="myButton" type="submit" value="입력">
     </form>
   </div>
 
