@@ -6,6 +6,7 @@ import numpy as np
 from scipy.interpolate import interp1d
 from scipy import array
 from .myfunc import rank_earning, income_details, prob_go_income
+import random
 
 # Create your views here.
 def question_list(request):
@@ -156,16 +157,26 @@ def test_endure(request):
     return render(request,'ranq/test_endure.html',{'form': form})
 
 def test_iq(request):
-    pk01 = 1
-    pk02 = 2
-    pk03 = 3
-    pk04 = 4
-    pk05 = 5
-    pk06 = 6
-    pk07 = 7
-    pk08 = 8
-    pk09 = 9
-    pk10 = 10
+
+    level_1_list = [8,	9,	18,	22,	23,	32,	33,	34,	38,	41,	43,	51,	56,	58,	59,	60,	66,	82,	93,	94]
+    level_1_smp = random.sample(level_1_list, 3)
+    level_2_list = [2,	4,	6,	7,	11,	13,	15,	16,	19,	21,	24,	35,	36,	47,	48,	50,	62,	63,	64,	65,	72,	73,	78,	79,	80,	81,	83,	84,	92,	95]
+    level_2_smp = random.sample(level_2_list,3)
+    level_3_list = [3,10,12,	14,	20,	25,	29,	37,	39,	40,	42,	44,	45,	46,	49,	52,	53,	54,	55,	57,	61,	67,	68,	71,	85,	86,	89,	90,	91]
+    level_3_smp = random.sample(level_3_list, 2)
+    level_4_5_list = [1, 5,	17,	26,	27,	28,	69,	70,	75,	76,	77,	87,	88,	30,	31,	74]
+    level_4_5_smp = random.sample(level_4_5_list, 2)
+
+    pk01 = level_1_smp[0]
+    pk02 = level_1_smp[1]
+    pk03 = level_1_smp[2]
+    pk04 = level_2_smp[0]
+    pk05 = level_2_smp[1]
+    pk06 = level_2_smp[2]
+    pk07 = level_3_smp[0]
+    pk08 = level_3_smp[1]
+    pk09 = level_4_5_smp[0]
+    pk10 = level_4_5_smp[1]
     q01 = get_object_or_404(Iq_Questions, pk=pk01)
     q02 = get_object_or_404(Iq_Questions, pk=pk02)
     q03 = get_object_or_404(Iq_Questions, pk=pk03)
