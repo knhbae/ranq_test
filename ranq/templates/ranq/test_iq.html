@@ -30,7 +30,7 @@
         document.iq_q.answer_01.value = answer;
         if(answer == "{{ q01.q_ans }}"){
           score = score + {{ q01.q_score }};
-          document.getElementById('iqscore').innerHTML= iqscore + score;
+          document.getElementById('iqscore').innerHTML= iqscore + Math.ceil(Math.log(score+0.5)*25);
         }
         document.iq_q.score.value = score;
         showOnOffQuestion('#quest01','#quest02');
@@ -39,7 +39,7 @@
         document.iq_q.answer_02.value = answer;
         if(answer == "{{ q02.q_ans }}"){
           score = score + {{ q02.q_score }};
-          document.getElementById('iqscore').innerHTML= iqscore + score;
+          document.getElementById('iqscore').innerHTML= iqscore + Math.ceil(Math.log(score+0.5)*25);
         }
         document.iq_q.score.value = score;
         showOnOffQuestion('#quest02','#quest03');
@@ -48,7 +48,7 @@
         document.iq_q.answer_03.value = answer;
         if(answer == "{{ q03.q_ans }}"){
           score = score + {{ q03.q_score }};
-          document.getElementById('iqscore').innerHTML= iqscore + score;
+          document.getElementById('iqscore').innerHTML= iqscore + Math.ceil(Math.log(score+0.5)*25);
         }
         document.iq_q.score.value = score;
         showOnOffQuestion('#quest03','#quest04');
@@ -57,7 +57,7 @@
         document.iq_q.answer_04.value = answer;
         if(answer == "{{ q04.q_ans }}"){
           score = score + {{ q04.q_score }};
-          document.getElementById('iqscore').innerHTML= iqscore + score;
+          document.getElementById('iqscore').innerHTML= iqscore + Math.ceil(Math.log(score+0.5)*25);
         }
         document.iq_q.score.value = score;
         showOnOffQuestion('#quest04','#quest05');
@@ -66,7 +66,7 @@
         document.iq_q.answer_05.value = answer;
         if(answer == "{{ q05.q_ans }}"){
           score = score + {{ q05.q_score }};
-          document.getElementById('iqscore').innerHTML= iqscore + score;
+          document.getElementById('iqscore').innerHTML= iqscore + Math.ceil(Math.log(score+0.5)*25);
         }
         document.iq_q.score.value = score;
         showOnOffQuestion('#quest05','#quest06');
@@ -75,7 +75,7 @@
         document.iq_q.answer_06.value = answer;
         if(answer == "{{ q06.q_ans }}"){
           score = score + {{ q06.q_score }};
-          document.getElementById('iqscore').innerHTML= iqscore + score;
+          document.getElementById('iqscore').innerHTML= iqscore + Math.ceil(Math.log(score+0.5)*25);
         }
         document.iq_q.score.value = score;
         showOnOffQuestion('#quest06','#quest07');
@@ -84,7 +84,7 @@
         document.iq_q.answer_07.value = answer;
         if(answer == "{{ q07.q_ans }}"){
           score = score + {{ q07.q_score }};
-          document.getElementById('iqscore').innerHTML= iqscore + score;
+          document.getElementById('iqscore').innerHTML= iqscore + Math.ceil(Math.log(score+0.5)*25);
         }
         document.iq_q.score.value = score;
         showOnOffQuestion('#quest07','#quest08');
@@ -93,7 +93,7 @@
         document.iq_q.answer_08.value = answer;
         if(answer == "{{ q08.q_ans }}"){
           score = score + {{ q08.q_score }};
-          document.getElementById('iqscore').innerHTML= iqscore + score;
+          document.getElementById('iqscore').innerHTML= iqscore + Math.ceil(Math.log(score+0.5)*25);
         }
         document.iq_q.score.value = score;
         showOnOffQuestion('#quest08','#quest09');
@@ -102,7 +102,7 @@
         document.iq_q.answer_09.value = answer;
         if(answer == "{{ q09.q_ans }}"){
           score = score + {{ q09.q_score }};
-          document.getElementById('iqscore').innerHTML= iqscore + score;
+          document.getElementById('iqscore').innerHTML= iqscore + Math.ceil(Math.log(score+0.5)*25);
         }
         document.iq_q.score.value = score;
         showOnOffQuestion('#quest09','#quest10');
@@ -111,7 +111,7 @@
         document.iq_q.answer_10.value = answer;
         if(answer == "{{ q10.q_ans }}"){
           score = score + {{ q10.q_score }};
-          document.getElementById('name').innerHTML= iqscore + score;
+          document.getElementById('iqscore').innerHTML= iqscore + Math.ceil(Math.log(score+0.5)*25);
         }
         document.iq_q.score.value = score;
         showOnOffQuestion('#quest10','#submitscore');
@@ -119,16 +119,42 @@
     }
   }
 </script>
-<div class="post">
-  <div id="scoreboard" style="display:none;">
-    <table>
-      <td>
-        나의 IQ는 현재
-        <p id="iqscore" class="main-text">75</p>
-        입니다.
-      </td>
-    </table>
+<style>
+  .jb-wrap {
+  	width: 80%;
+  	margin: 10px auto;
+  	border: 1px solid #000000;
+  	position: relative;
+  	text-align: center;
+  }
+  .jb-wrap img {
+  	width: 100%;
+  	vertical-align: middle;
+  }
+  .jb-text {
+  	/* padding: 5px 10px; */
+  	/* background-color: yellow; */
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+  	text-align: center;
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate( -50%, -50% );
+  }
+</style>
+<div id="scoreboard" style="display:none;">
+  <div class="jb-wrap">
+    현재까지의 IQ는
+    <div class="jb-image"><img src="/media/iq_rst.png" alt=""></div>
+      <div class="jb-text">
+        <p id="iqscore">75</p>
+      </div>
+    입니다. 문제를 풀면 IQ가 재측정됩니다.
   </div>
+</div>
+<div class="post">
   <div id="quest00">
     <br>
     <img src='/media/brain1.png'>
@@ -137,10 +163,10 @@
   </div>
 
   <div id="quest01" style="display:none;">
-    <p class="main-text">1. {{ q01.q_desc|linebreaksbr }}</p>
-    <img src='/media/{{ q01.q_img_url }}' style="width:80%">
-    <input type="text" placeholder="정답을 입력해주세요.">
-    <button type="button" class="myButton" onclick="insertform('#iq_q',1);">다음</button>
+      <p class="main-text">1. {{ q01.q_desc|linebreaksbr }}</p>
+      <img src='/media/{{ q01.q_img_url }}' style="width:80%">
+      <input type="text" placeholder="정답을 입력해주세요.">
+      <button type="button" class="myButton" onclick="insertform('#iq_q',1);">다음</button>
   </div>
   <div id="quest02" style="display:none;">
     <p class="main-text">2. {{ q02.q_desc|linebreaksbr }}</p>

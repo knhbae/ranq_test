@@ -21,14 +21,14 @@ class VisitorCountMiddleware(object):
         if request.method == 'GET':
             ip = get_ip(request)
             ip_display = ip.split('.')[0] + '.' + ip.split('.')[1] + '. * . *'
-            print(ip)
+            # print(ip)
 
             try:
                 visitor = Visitor.objects.get(ip=ip, date=timezone.localtime())
 
             except Exception as e:
                 # 처음 블로그를 방문한 경우엔 조회 기록이 없음
-                print(e)
+                # print(e)
                 visitor = Visitor(ip=ip, date=timezone.localtime(), ip_display=ip_display)
                 self.visitor_total.cnt += 1
 

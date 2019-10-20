@@ -40,6 +40,8 @@ class Goal_Income(models.Model):
     time_5 = models.FloatField(null=True, blank=True,default=0)
     plan_6 = models.CharField(max_length=30, null=True, blank=True)
     time_6 = models.FloatField(null=True, blank=True,default=0)
+    created_date = models.DateTimeField(default=timezone.now)
+    ip = models.CharField(max_length=15, default=None, null=True)  # ip 주소
 
 class U_Info_Income(models.Model):
     y_income	=	models.FloatField()
@@ -53,7 +55,8 @@ class U_Info_Income(models.Model):
     em_insurance	=	models.FloatField(null=True, blank=True)
     in_tax	=	models.FloatField(null=True, blank=True)
     resi_tax	=	models.FloatField(null=True, blank=True)
-
+    created_date = models.DateTimeField(default=timezone.now)
+    ip = models.CharField(max_length=15, default=None, null=True)  # ip 주소
 #for U_Info_Income
 class Info_Income(models.Model):
     y_income	=	models.FloatField()
@@ -71,10 +74,12 @@ class Info_Income(models.Model):
 class Rank_Income(models.Model):
     y_income = models.FloatField()
     rank = models.FloatField()
-
+    created_date = models.DateTimeField(default=timezone.now)
 #for 참을성 TEST
 class Endure_Test(models.Model):
     e_time = models.FloatField()
+    created_date = models.DateTimeField(default=timezone.now)
+    ip = models.CharField(max_length=15, default=None, null=True)  # ip 주소
 
 class Iq_Questions(models.Model):
     q_num	=	models.CharField(max_length=50)
@@ -106,3 +111,5 @@ class Iq_Answers(models.Model):
     answer_08	=	models.CharField(max_length=50)
     answer_09	=	models.CharField(max_length=50)
     answer_10	=	models.CharField(max_length=50)
+    created_date = models.DateTimeField(default=timezone.now)
+    ip = models.CharField(max_length=15, default=None, null=True)  # ip 주소

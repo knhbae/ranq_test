@@ -5,8 +5,11 @@ from .forms import QuestionForm, Short_answerForm, Income_answerForm, Goal_Incom
 import numpy as np
 from scipy.interpolate import interp1d
 from scipy import array
+from scipy.stats import norm
 from .myfunc import rank_earning, income_details, prob_go_income
 import random
+from ipware.ip import get_ip
+import math
 
 # Create your views here.
 def question_list(request):
@@ -105,7 +108,7 @@ def test_income(request):
             ans.em_insurance	=	income_details(ans.y_income)[6]
             ans.in_tax	=	income_details(ans.y_income)[7]
             ans.resi_tax	=	income_details(ans.y_income)[8]
-
+            ans.ip = get_ip(request)
             a = ans
             b = income_details(ans.y_income)[3] + income_details(ans.y_income)[4] +  income_details(ans.y_income)[5] +  income_details(ans.y_income)[6] #insurance total
             c = income_details(ans.y_income)[7] + income_details(ans.y_income)[8] #tax total
@@ -124,6 +127,7 @@ def goal_income(request):
         form = Goal_IncomeForm(request.POST)
         if form.is_valid():
             ans = form.save(commit=False)
+            ans.ip = get_ip(request)
             cur_income = ans.cur_income
             goal_income = ans.goal_income
             period = ans.period
@@ -146,6 +150,7 @@ def test_endure(request):
         if form.is_valid():
             ans = form.save(commit=False)
             # period = ans.period  #카피본
+            ans.ip = get_ip(request)
             ans1 = ans.e_time
             ans.save()
             ## 결과 페이지로 가는 것으로 수정해야함 2019.08.07 수정
@@ -204,9 +209,12 @@ def test_iq(request):
             ans.question_09 = q09.q_num
             ans.question_10 = q10.q_num
             # ans.question_id = c
+            ans.ip = get_ip(request)
             a = ans
+            a.score = np.round(75 + math.log(a.score + 1.0) * 26,1)
+            b = np.round(norm.cdf(a.score, loc = 100, scale = 24)*100,1)
             ans.save()
-            return render(request, 'ranq/test_iq_result.html',{'a': a})
+            return render(request, 'ranq/test_iq_result.html',{'a': a, 'b': b})
 
     else:
         form = Iq_AnswersForm()
