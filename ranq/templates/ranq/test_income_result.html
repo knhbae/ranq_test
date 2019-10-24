@@ -12,6 +12,9 @@
     <p class="main-text">{{ a.rank_income }}% 입니다!!</p>
     {% endif %}
   <div class="table-users">
+    <input class="Bt1" type="button" value=" 연봉 상승 가능성 보기 ▶" onclick="location.href='/g/income/'"/>
+  </div>
+  <div class="table-users">
     상세 내역
     <input class="Bt3" id="myButton1" type="button" value=" ▼ " onclick="showOnOffTable('#income_details_1','myButton1')"/>
        <table id="income_details_1" style="display:none;">
@@ -63,9 +66,6 @@
         	<td>{{ a.em_insurance }} 만원</td>
         </tr>
       </table>
-  </div>
-  <div class="table-users">
-    <input class="Bt1" type="button" value=" 내 연봉은 상승할까? ▶" onclick="location.href='/g/income/'"/>
   </div>
 </div>
 <div id="disqus_thread"></div>

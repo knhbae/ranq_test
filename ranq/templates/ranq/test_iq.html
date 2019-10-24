@@ -157,7 +157,9 @@
 <div class="post">
   <div id="quest00">
     <br>
-    <img src='/media/brain1.png'>
+    <div>
+      <img src='/media/brain1.png'>
+    </div>
     <input type="text" placeholder="닉네임을 입력해주세요.">
     <button type="button" class="myButton" onclick="insertform('#iq_q',0);">입력</button>
   </div>
@@ -165,60 +167,70 @@
   <div id="quest01" style="display:none;">
       <p class="main-text">1. {{ q01.q_desc|linebreaksbr }}</p>
       <img src='/media/{{ q01.q_img_url }}' style="width:80%">
+      <p></p>
       <input type="text" placeholder="정답을 입력해주세요.">
       <button type="button" class="myButton" onclick="insertform('#iq_q',1);">다음</button>
   </div>
   <div id="quest02" style="display:none;">
     <p class="main-text">2. {{ q02.q_desc|linebreaksbr }}</p>
     <img src='/media/{{ q02.q_img_url }}' style="width:80%">
+    <p></p>
     <input type="text" placeholder="정답을 입력해주세요.">
     <button type="button" class="myButton" onclick="insertform('#iq_q',2);">다음</button>
   </div>
   <div id="quest03" style="display:none;">
     <p class="main-text">3. {{ q03.q_desc|linebreaksbr }}</p>
     <img src='/media/{{ q03.q_img_url }}' style="width:80%">
+    <p></p>
     <input type="text" placeholder="정답을 입력해주세요.">
     <button type="button" class="myButton" onclick="insertform('#iq_q',3);">다음</button>
   </div>
   <div id="quest04" style="display:none;">
     <p class="main-text">4. {{ q04.q_desc|linebreaksbr }}</p>
     <img src='/media/{{ q04.q_img_url }}' style="width:80%">
+    <p></p>
     <input type="text" placeholder="정답을 입력해주세요.">
     <button type="button" class="myButton" onclick="insertform('#iq_q',4);">다음</button>
   </div>
   <div id="quest05" style="display:none;">
     <p class="main-text">5. {{ q05.q_desc|linebreaksbr }}</p>
     <img src='/media/{{ q05.q_img_url }}' style="width:80%">
+    <p></p>
     <input type="text" placeholder="정답을 입력해주세요.">
     <button type="button" class="myButton" onclick="insertform('#iq_q',5);">다음</button>
   </div>
   <div id="quest06" style="display:none;">
     <p class="main-text">6. {{ q06.q_desc|linebreaksbr }}</p>
     <img src='/media/{{ q06.q_img_url }}' style="width:80%">
+    <p></p>
     <input type="text" placeholder="정답을 입력해주세요.">
     <button type="button" class="myButton" onclick="insertform('#iq_q',6);">다음</button>
   </div>
   <div id="quest07" style="display:none;">
     <p class="main-text">7. {{ q07.q_desc|linebreaksbr }}</p>
     <img src='/media/{{ q07.q_img_url }}' style="width:80%">
+    <p></p>
     <input type="text" placeholder="정답을 입력해주세요.">
     <button type="button" class="myButton" onclick="insertform('#iq_q',7);">다음</button>
   </div>
   <div id="quest08" style="display:none;">
     <p class="main-text">8. {{ q08.q_desc|linebreaksbr }}</p>
     <img src='/media/{{ q08.q_img_url }}' style="width:80%">
+    <p></p>
     <input type="text" placeholder="정답을 입력해주세요.">
     <button type="button" class="myButton" onclick="insertform('#iq_q',8);">다음</button>
   </div>
   <div id="quest09" style="display:none;">
     <p class="main-text">9. {{ q09.q_desc|linebreaksbr }}</p>
     <img src='/media/{{ q09.q_img_url }}' style="width:80%">
+    <p></p>
     <input type="text" placeholder="정답을 입력해주세요.">
     <button type="button" class="myButton" onclick="insertform('#iq_q',9);">다음</button>
   </div>
   <div id="quest10" style="display:none;">
     <p class="main-text">10. {{ q10.q_desc|linebreaksbr }}</p>
     <img src='/media/{{ q10.q_img_url }}' style="width:80%">
+    <p></p>
     <input type="text" placeholder="정답을 입력해주세요.">
     <button type="button" class="myButton" onclick="insertform('#iq_q',10);">다음</button>
   </div>
@@ -241,6 +253,7 @@
       </td>
     </table>
     <div id="submitscore" style="display:none;">
+      <p class="main-text">상위 % 확인하기</p>
       <input  class="myButton" type="submit" value="확인">
     </div>
   </form>
